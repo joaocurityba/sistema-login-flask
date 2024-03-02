@@ -1,0 +1,14 @@
+<h2>Atualizar Usuário</h2>
+    <form method="POST">
+        <label for="new_username">Nome de Usuário:</label>
+        <input type="text" id="new_username" name="new_username" value="{{ user.username }}"><br>
+        
+        <label for="new_password">Senha:</label>
+        <input type="password" id="new_password" name="new_password" placeholder="Nova Senha"><br>
+
+        <label for="new_email">Email:</label>
+        <input type="email" id="new_email" name="new_email" value="{{ user.email }}"><br>
+        
+        <button type="submit">Atualizar</button>
+        <button><a href="{{ url_for('users') }}">Voltar</a></button>
+    </form>

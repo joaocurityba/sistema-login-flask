@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Meu Sistema</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('register') }}">Registrar</a></li>
+            {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('home') }}">Página Inicial</a></li>
+            <li><a href="{{ url_for('change_password') }}">Alterar Senha</a></li>
+            <li><a href="{{ url_for('logout') }}">Sair</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
